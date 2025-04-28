@@ -1,3 +1,4 @@
+import { NgTemplateOutlet } from '@angular/common';
 import {
   type AfterViewInit,
   ChangeDetectionStrategy,
@@ -8,11 +9,10 @@ import {
   TemplateRef,
   ViewChild,
 } from '@angular/core';
+import { TourHotkeyListenerComponent } from '../../core/public_api';
 import type { ITuiHintStepOption } from '../step-option.interface';
 import { TourStepTemplateService } from '../tour-step-template.service';
 import { TourTuiHintService } from '../tour-tui-hint.service';
-import { TourHotkeyListenerComponent } from 'ngx-ui-tour-core';
-import { NgTemplateOutlet } from '@angular/common';
 import { TourDefaultStepTemplateComponent } from './tour-default-step-template/tour-default-step-template.component';
 
 @Component({

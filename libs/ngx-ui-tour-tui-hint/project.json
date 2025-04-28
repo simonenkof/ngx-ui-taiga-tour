@@ -1,6 +1,6 @@
 {
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "name": "ngx-ui-tour-tui-hint",
+  "name": "ngx-taiga-tour",
   "projectType": "library",
   "tags": ["libs"],
   "sourceRoot": "libs/ngx-ui-tour-tui-hint/src",
@@ -27,13 +27,7 @@
       "outputs": ["{workspaceRoot}/dist/ngx-ui-tour-tui-hint"],
       "options": {
         "parallel": false,
-        "commands": ["nx prebuild {projectName}", "nx postbuild {projectName}"]
-      }
-    },
-    "postbuild": {
-      "executor": "nx:run-commands",
-      "options": {
-        "command": "shx cp README.md libs/ngx-ui-tour-tui-hint/CHANGELOG.md  dist/ngx-ui-tour-tui-hint/"
+        "commands": ["nx prebuild {projectName}"]
       }
     },
     "lint": {

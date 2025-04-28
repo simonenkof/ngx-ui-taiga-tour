@@ -23,9 +23,7 @@
     "typeRoots": ["node_modules/@types"],
     "lib": ["ES2022", "dom"],
     "paths": {
-      "ngx-ui-tour-console": ["libs/ngx-ui-tour-console/src/public_api.ts"],
-      "ngx-ui-tour-core": ["libs/ngx-ui-tour-core/src/public_api.ts"],
-      "ngx-ui-tour-tui-hint": ["libs/ngx-ui-tour-tui-hint/src/public_api.ts"]
+      "ngx-ui-taiga-tour": ["libs/ngx-ui-taiga-tour/src/public_api.ts"]
     }
   }
 }

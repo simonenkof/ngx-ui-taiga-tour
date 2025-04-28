@@ -8,11 +8,11 @@ import {
   signal,
   ViewContainerRef,
 } from '@angular/core';
-import type { TourAnchorDirective } from 'ngx-ui-tour-core';
-import { TourTuiHintService } from './tour-tui-hint.service';
+import type { TourAnchorDirective } from '../core/public_api';
 import type { ITuiHintStepOption } from './step-option.interface';
-import { TourStepTemplateService } from './tour-step-template.service';
 import { TourAnchorOpenerComponent } from './tour-anchor-opener.component';
+import { TourStepTemplateService } from './tour-step-template.service';
+import { TourTuiHintService } from './tour-tui-hint.service';
 
 @Directive({
   selector: '[tourAnchor]',

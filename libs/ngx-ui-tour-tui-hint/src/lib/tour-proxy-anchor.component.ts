@@ -1,5 +1,5 @@
-import { BaseTourProxyAnchor } from 'ngx-ui-tour-core';
 import { ChangeDetectionStrategy, Component, inject, Input } from '@angular/core';
+import { BaseTourProxyAnchor } from '../core/public_api';
 import { TourAnchorTuiHintDirective } from './tour-anchor.directive';
 
 @Component({

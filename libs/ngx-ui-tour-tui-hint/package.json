@@ -1,6 +1,7 @@
 {
-  "name": "ngx-ui-tour-tui-hint",
-  "description": "UI tour library for Angular 12+",
+  "name": "ngx-ui-taiga-tour",
+  "version": "0.1.0",
+  "description": "UI tour library for Angular 19 with Taiga UI",
   "keywords": [
     "angular",
     "ngx",
@@ -11,10 +12,9 @@
     "onboarding",
     "onboarding-tour"
   ],
-  "repository": "https://github.com/hakimio/ngx-ui-tour.git",
-  "author": "Tomas Rimkus <tomas.r@programmer.net>",
+  "repository": "https://github.com/simonenkof/ngx-ui-tour.git",
+  "author": "Fedor Simonenko <simonenko.f.a@gmail.com>",
   "license": "MIT",
-  "version": "8.0.0",
   "peerDependencies": {
     "@angular/common": "^19.0.0",
     "@angular/core": "^19.0.0",
@@ -22,7 +22,6 @@
     "@taiga-ui/icons": "^4.0.0"
   },
   "dependencies": {
-    "ngx-ui-tour-core": "14.0.0",
     "tslib": "^2.3.0"
   }
 }

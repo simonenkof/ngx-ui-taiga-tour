@@ -3,6 +3,5 @@
   "dest": "../../dist/ngx-ui-tour-tui-hint",
   "lib": {
     "entryFile": "src/public_api.ts"
-  },
-  "allowedNonPeerDependencies": ["ngx-ui-tour-core"]
+  }
 }

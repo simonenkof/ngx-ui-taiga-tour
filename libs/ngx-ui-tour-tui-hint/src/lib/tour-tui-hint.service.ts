@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { TourService } from 'ngx-ui-tour-core';
+import { TourService } from '../core/public_api';
 import type { ITuiHintStepOption } from './step-option.interface';
 
 @Injectable({
