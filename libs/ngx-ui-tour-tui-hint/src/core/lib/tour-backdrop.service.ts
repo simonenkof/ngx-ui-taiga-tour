@@ -1,10 +1,10 @@
+import { DOCUMENT } from '@angular/common';
 import type { ElementRef } from '@angular/core';
 import { inject, Injectable, RendererFactory2 } from '@angular/core';
 import type { Subscription } from 'rxjs';
 import { ScrollingService } from './scrolling.service';
 import { TourResizeObserverService } from './tour-resize-observer.service';
 import type { IStepOption } from './tour.service';
-import { DOCUMENT } from '@angular/common';
 import { OverflowUtils, ScrollUtils } from './utils';
 
 interface Rectangle {
@@ -85,11 +85,12 @@ export class TourBackdropService {
 
   private setBackdropPosition(rectangle: DOMRect = null) {
     const docEl = this.document.documentElement,
-      scrollContainer = ScrollUtils.getScrollContainer(this.targetHtmlElement, this.step.scrollContainer) ?? docEl,
+      scrollContainer =
+        ScrollUtils.getScrollContainer(this.targetHtmlElement, this.step.scrollSettings.scrollContainer) ?? docEl,
       elementBoundingRect = rectangle ?? this.targetHtmlElement.getBoundingClientRect(),
       scrollContainerRect = scrollContainer.getBoundingClientRect(),
       visibleSection = OverflowUtils.getVisibleSection(elementBoundingRect, scrollContainerRect),
-      scrollHeight = docEl.scrollHeight,
+      scrollHeight = docEl.scrollHeight > 0 ? docEl.scrollHeight + 10 : 0,
       scrollWidth = docEl.scrollWidth,
       window = this.document.defaultView,
       scrollX = window.scrollX,
@@ -130,10 +131,11 @@ export class TourBackdropService {
   private subscribeToResizeEvents() {
     this.resizeSubscription = this.resizeObserverService.resize$.subscribe(() => {
       this.setBackdropPosition();
-      if (!this.step.disableScrollToAnchor) {
+      if (!this.step.scrollSettings.disableScrollToAnchor) {
         this.scrollingService.ensureVisible(this.targetHtmlElement, {
-          center: this.step.centerAnchorOnScroll,
+          centerAnchorOnScroll: this.step.scrollSettings.centerAnchorOnScroll,
           smoothScroll: false,
+          coordinates: { x: this.step.scrollSettings.coordinates.x, y: this.step.scrollSettings.coordinates.y },
         });
       }
     });

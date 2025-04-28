@@ -2,20 +2,34 @@ import { inject, Injectable } from '@angular/core';
 import type { IsActiveMatchOptions, UrlSegment } from '@angular/router';
 import { NavigationStart, Router } from '@angular/router';
 
-import type { TourAnchorDirective } from './tour-anchor.directive';
 import type { Observable } from 'rxjs';
 import { delay, filter, first, map, merge as mergeStatic, of, Subject, takeUntil, timeout } from 'rxjs';
-import { ScrollingService } from './scrolling.service';
-import type { BackdropConfig } from './tour-backdrop.service';
-import { TourBackdropService } from './tour-backdrop.service';
 import { AnchorClickService } from './anchor-click.service';
 import { ScrollBlockingService } from './scroll-blocking.service';
+import { ScrollingService } from './scrolling.service';
+import type { TourAnchorDirective } from './tour-anchor.directive';
+import type { BackdropConfig } from './tour-backdrop.service';
+import { TourBackdropService } from './tour-backdrop.service';
 import { deepMerge } from './utils';
 
 export interface StepDimensions {
   width?: string;
   minWidth?: string;
   maxWidth?: string;
+}
+
+export interface ScrollSettings {
+  disableScrollToAnchor?: boolean;
+  centerAnchorOnScroll?: boolean;
+  smoothScroll?: boolean;
+  disablePageScrolling?: boolean;
+  /**
+   * CSS selector or html element reference. Only set this config if you have enabled "smoothScroll" and tour step
+   * description pops-up before scrolling has finished or doesn't show up at all. This should only be the case when
+   * scroll container is part of shadow DOM.
+   */
+  scrollContainer?: string | HTMLElement;
+  coordinates?: { x: number; y: number };
 }
 
 export interface IStepOption {
@@ -26,15 +40,7 @@ export interface IStepOption {
   route?: string | UrlSegment[];
   nextStep?: number | string;
   prevStep?: number | string;
-  disableScrollToAnchor?: boolean;
-  centerAnchorOnScroll?: boolean;
-  smoothScroll?: boolean;
-  /**
-   * CSS selector or html element reference. Only set this config if you have enabled "smoothScroll" and tour step
-   * description pops-up before scrolling has finished or doesn't show up at all. This should only be the case when
-   * scroll container is part of shadow DOM.
-   */
-  scrollContainer?: string | HTMLElement;
+  scrollSettings?: ScrollSettings;
   prevBtnTitle?: string;
   nextBtnTitle?: string;
   endBtnTitle?: string;
@@ -47,7 +53,6 @@ export interface IStepOption {
   delayBeforeStepShow?: number;
   nextOnAnchorClick?: boolean;
   duplicateAnchorHandling?: 'error' | 'registerFirst' | 'registerLast';
-  disablePageScrolling?: boolean;
   allowUserInitiatedNavigation?: boolean;
   stepDimensions?: StepDimensions;
   popoverClass?: string;
@@ -71,7 +76,13 @@ export interface StepChangeParams<T extends IStepOption = IStepOption> {
 }
 
 const DEFAULT_STEP_OPTIONS: IStepOption = {
-  disableScrollToAnchor: false,
+  scrollSettings: {
+    disableScrollToAnchor: false,
+    centerAnchorOnScroll: true,
+    disablePageScrolling: true,
+    smoothScroll: true,
+    coordinates: { x: 0, y: 0 },
+  },
   prevBtnTitle: 'Prev',
   nextBtnTitle: 'Next',
   endBtnTitle: 'End',
@@ -82,9 +93,6 @@ const DEFAULT_STEP_OPTIONS: IStepOption = {
   delayBeforeStepShow: 0,
   nextOnAnchorClick: false,
   duplicateAnchorHandling: 'error',
-  centerAnchorOnScroll: true,
-  disablePageScrolling: true,
-  smoothScroll: true,
   allowUserInitiatedNavigation: false,
   stepDimensions: {
     minWidth: '250px',
@@ -523,18 +531,14 @@ export class TourService<T extends IStepOption = IStepOption> {
   }
 
   private scrollToAnchor(step: T): Promise<void> {
-    if (step.disableScrollToAnchor) {
+    if (step.scrollSettings.disableScrollToAnchor) {
       return Promise.resolve();
     }
 
     const anchor = this.anchors[step?.anchorId],
       htmlElement = anchor.element.nativeElement;
 
-    return this.scrollingService.ensureVisible(htmlElement, {
-      center: step.centerAnchorOnScroll,
-      smoothScroll: step.smoothScroll,
-      scrollContainer: step.scrollContainer,
-    });
+    return this.scrollingService.ensureVisible(htmlElement, step.scrollSettings);
   }
 
   private toggleBackdrop(step: T) {
@@ -548,8 +552,8 @@ export class TourService<T extends IStepOption = IStepOption> {
   }
 
   private togglePageScrolling(step: T) {
-    if (step.disablePageScrolling) {
-      this.scrollBlockingService.enable(step.scrollContainer);
+    if (step.scrollSettings.disablePageScrolling) {
+      this.scrollBlockingService.enable(step.scrollSettings.scrollContainer);
     } else {
       this.scrollBlockingService.disable();
     }

@@ -1,13 +1,8 @@
-import { ElementSides, isCovered, isInViewport, OverflowUtils, ScrollUtils } from './utils';
-import { debounceTime, firstValueFrom, fromEvent, map, of, timeout } from 'rxjs';
-import { inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { DOCUMENT, isPlatformBrowser } from '@angular/common';
-
-export interface ScrollOptions {
-  center: boolean;
-  smoothScroll: boolean;
-  scrollContainer?: string | HTMLElement;
-}
+import { inject, Injectable, PLATFORM_ID } from '@angular/core';
+import { debounceTime, firstValueFrom, fromEvent, map, of, timeout } from 'rxjs';
+import type { ScrollSettings } from './tour.service';
+import { ElementSides, isCovered, isInViewport, OverflowUtils, ScrollUtils } from './utils';
 
 @Injectable({
   providedIn: 'root',
@@ -17,10 +12,10 @@ export class ScrollingService {
   private readonly isBrowser = isPlatformBrowser(this.platformId);
   private readonly document = inject(DOCUMENT);
   private readonly window = this.document.defaultView;
-  private scrollOptions: ScrollOptions;
+  private scrollOptions: ScrollSettings;
   private anchorEl: HTMLElement;
 
-  ensureVisible(anchorElement: HTMLElement, options: ScrollOptions): Promise<void> {
+  ensureVisible(anchorElement: HTMLElement, options: ScrollSettings): Promise<void> {
     this.scrollOptions = options;
     this.anchorEl = anchorElement;
 
@@ -29,13 +24,18 @@ export class ScrollingService {
     const userScrollContainer = this.scrollOptions.scrollContainer,
       scrollContainer = ScrollUtils.getScrollContainer(anchorElement, userScrollContainer) ?? document.documentElement;
 
+    if ((options.coordinates?.x !== 0 || options.coordinates?.y !== 0) && scrollContainer) {
+      scrollContainer.scroll({ left: options.coordinates.x, top: options.coordinates.y });
+      return Promise.resolve();
+    }
+
     if (OverflowUtils.isHeightOverflowing(anchorElement, scrollContainer)) {
       anchorElement.scrollIntoView({
         block: 'start',
         inline: 'start',
         behavior,
       });
-    } else if (options.center && !('safari' in this.window)) {
+    } else if (options.centerAnchorOnScroll && !('safari' in this.window)) {
       anchorElement.scrollIntoView({
         block: 'center',
         inline: 'center',

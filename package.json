@@ -20,8 +20,7 @@
     "prettier:fix": "prettier . -w",
     "release": "nx release",
     "publish": "cd dist/ngx-ui-tour-tui-hint && npm publish && cd ../../",
-    "build:lib:all": "nx run-many --target=build --projects=tag:libs",
-    "pub:lib:all": "nx run-many --target=publish --projects=tag:libs"
+    "build": "nx run-many --target=build --projects=tag:libs"
   },
   "dependencies": {
     "@angular/animations": "^19.0.5",
