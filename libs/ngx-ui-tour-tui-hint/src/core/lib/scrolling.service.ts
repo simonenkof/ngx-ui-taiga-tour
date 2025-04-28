@@ -1,5 +1,6 @@
 import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { inject, Injectable, PLATFORM_ID } from '@angular/core';
+import type { Observable } from 'rxjs';
 import { debounceTime, firstValueFrom, fromEvent, map, of, timeout } from 'rxjs';
 import type { ScrollSettings } from './tour.service';
 import { ElementSides, isCovered, isInViewport, OverflowUtils, ScrollUtils } from './utils';
@@ -60,7 +61,7 @@ export class ScrollingService {
     return behavior === 'smooth' ? firstValueFrom(this.waitForScrollFinish$) : Promise.resolve();
   }
 
-  private get waitForScrollFinish$() {
+  private get waitForScrollFinish$(): Observable<void> {
     const userScrollContainer = this.scrollOptions.scrollContainer,
       // Default here is "document" instead of "document.documentElement" on purpose
       scrollContainer = ScrollUtils.getScrollContainer(this.anchorEl, userScrollContainer) ?? document;
