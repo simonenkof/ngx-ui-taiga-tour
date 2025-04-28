@@ -4,7 +4,7 @@
 
 > UI tour library for Angular 19 with Taiga UI
 
-`taiga-tour` is a fork of **Isaac Mann's** `ngx-tour`. The project had to be forked since the original is no longer
+`taiga-ui-tour` is a fork of **Isaac Mann's** `ngx-tour`. The project had to be forked since the original is no longer
 maintained.
 
 ## License
