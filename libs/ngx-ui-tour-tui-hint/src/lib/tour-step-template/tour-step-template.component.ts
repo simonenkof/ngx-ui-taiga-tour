@@ -1,47 +1,42 @@
 import {
-    type AfterViewInit,
-    ChangeDetectionStrategy,
-    Component,
-    ContentChild,
-    inject,
-    Input,
-    TemplateRef,
-    ViewChild
+  type AfterViewInit,
+  ChangeDetectionStrategy,
+  Component,
+  ContentChild,
+  inject,
+  Input,
+  TemplateRef,
+  ViewChild,
 } from '@angular/core';
-import type {ITuiHintStepOption} from '../step-option.interface';
-import {TourStepTemplateService} from '../tour-step-template.service';
-import {TourTuiHintService} from '../tour-tui-hint.service';
-import {TourHotkeyListenerComponent} from 'ngx-ui-tour-core';
-import {NgTemplateOutlet} from '@angular/common';
-import {TourDefaultStepTemplateComponent} from './tour-default-step-template/tour-default-step-template.component';
+import type { ITuiHintStepOption } from '../step-option.interface';
+import { TourStepTemplateService } from '../tour-step-template.service';
+import { TourTuiHintService } from '../tour-tui-hint.service';
+import { TourHotkeyListenerComponent } from 'ngx-ui-tour-core';
+import { NgTemplateOutlet } from '@angular/common';
+import { TourDefaultStepTemplateComponent } from './tour-default-step-template/tour-default-step-template.component';
 
 @Component({
-    selector: 'tour-step-template',
-    templateUrl: './tour-step-template.component.html',
-    imports: [
-        NgTemplateOutlet,
-        TourDefaultStepTemplateComponent
-    ],
-    changeDetection: ChangeDetectionStrategy.OnPush
+  selector: 'tour-step-template',
+  templateUrl: './tour-step-template.component.html',
+  imports: [NgTemplateOutlet, TourDefaultStepTemplateComponent],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TourStepTemplateComponent extends TourHotkeyListenerComponent implements AfterViewInit {
+  @Input()
+  stepTemplate: TemplateRef<{ step: ITuiHintStepOption }>;
 
-    @Input()
-    stepTemplate: TemplateRef<{ step: ITuiHintStepOption }>;
+  @ContentChild(TemplateRef)
+  stepTemplateContent: TemplateRef<{ step: ITuiHintStepOption }>;
 
-    @ContentChild(TemplateRef)
-    stepTemplateContent: TemplateRef<{ step: ITuiHintStepOption }>;
+  @ViewChild('tuiDropdownTemplate')
+  template: TemplateRef<never>;
 
-    @ViewChild('tuiDropdownTemplate')
-    template: TemplateRef<never>;
+  step: ITuiHintStepOption = {};
 
-    step: ITuiHintStepOption = {};
+  protected override readonly tourService = inject(TourTuiHintService);
+  private readonly tourStepTemplateService = inject(TourStepTemplateService);
 
-    protected override readonly tourService = inject(TourTuiHintService);
-    private readonly tourStepTemplateService = inject(TourStepTemplateService);
-
-    ngAfterViewInit() {
-        this.tourStepTemplateService.templateComponent = this;
-    }
-
+  ngAfterViewInit() {
+    this.tourStepTemplateService.templateComponent = this;
+  }
 }

@@ -4,7 +4,7 @@
 
 > UI tour library for Angular 12+
 
-`ngx-ui-tour` is a fork of __Isaac Mann's__ `ngx-tour`. The project had to be forked since the original is no longer
+`ngx-ui-tour` is a fork of **Isaac Mann's** `ngx-tour`. The project had to be forked since the original is no longer
 maintained.
 
 ## Demo

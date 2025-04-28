@@ -1,5 +1,5 @@
 ```css
 .no-scroll {
-    overflow: hidden;
+  overflow: hidden;
 }
 ```

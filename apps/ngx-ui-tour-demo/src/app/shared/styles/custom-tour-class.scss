@@ -1,16 +1,16 @@
 ::ng-deep {
-    .popover.custom-tour-class {
-        --bs-popover-arrow-border: #333;
-        --bs-popover-bg: #333;
-        --bs-popover-border-color: #333;
-        --bs-popover-body-color: #eee;
+  .popover.custom-tour-class {
+    --bs-popover-arrow-border: #333;
+    --bs-popover-bg: #333;
+    --bs-popover-border-color: #333;
+    --bs-popover-body-color: #eee;
 
-        .progress {
-            color: #6c757d !important;
-        }
-
-        .btn-close {
-            filter: invert(1) grayscale(100%) brightness(200%);
-        }
+    .progress {
+      color: #6c757d !important;
     }
+
+    .btn-close {
+      filter: invert(1) grayscale(100%) brightness(200%);
+    }
+  }
 }

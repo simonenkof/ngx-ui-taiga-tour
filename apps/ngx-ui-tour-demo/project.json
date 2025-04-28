@@ -20,9 +20,7 @@
         "index": "apps/ngx-ui-tour-demo/src/index.html",
         "browser": "apps/ngx-ui-tour-demo/src/main.ts",
         "tsConfig": "apps/ngx-ui-tour-demo/src/tsconfig.app.json",
-        "polyfills": [
-          "zone.js"
-        ],
+        "polyfills": ["zone.js"],
         "inlineStyleLanguage": "scss",
         "assets": [
           "apps/ngx-ui-tour-demo/src/assets",
@@ -41,9 +39,7 @@
         ],
         "scripts": [],
         "stylePreprocessorOptions": {
-          "includePaths": [
-            "./src"
-          ],
+          "includePaths": ["./src"],
           "sass": {
             "silenceDeprecations": ["import"]
           }
@@ -81,9 +77,7 @@
         }
       },
       "defaultConfiguration": "production",
-      "outputs": [
-        "{options.outputPath}"
-      ]
+      "outputs": ["{options.outputPath}"]
     },
     "serve": {
       "executor": "@angular/build:dev-server",
@@ -101,10 +95,7 @@
     "lint": {
       "executor": "@nx/eslint:lint",
       "options": {
-        "lintFilePatterns": [
-          "apps/ngx-ui-tour-demo/src/**/*.ts",
-          "apps/ngx-ui-tour-demo/src/**/*.html"
-        ],
+        "lintFilePatterns": ["apps/ngx-ui-tour-demo/src/**/*.ts", "apps/ngx-ui-tour-demo/src/**/*.html"],
         "eslintConfig": "apps/ngx-ui-tour-demo/eslint.config.cjs"
       },
       "outputs": ["{options.outputFile}"]

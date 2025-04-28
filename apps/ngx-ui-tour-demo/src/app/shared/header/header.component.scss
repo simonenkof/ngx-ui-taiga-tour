@@ -1,44 +1,44 @@
 @import '@taiga-ui/core/styles/taiga-ui-local';
 
 :host {
-    position: relative;
-    display: block;
-    clear: right;
-    margin-top: 2rem;
+  position: relative;
+  display: block;
+  clear: right;
+  margin-top: 2rem;
 }
 
 .title-container {
-    display: flex;
-    flex-direction: row-reverse;
+  display: flex;
+  flex-direction: row-reverse;
 }
 
 .title {
-    font: var(--tui-font-heading-5);
-    margin: 0 auto 0.5rem 0;
+  font: var(--tui-font-heading-5);
+  margin: 0 auto 0.5rem 0;
 
-    &:first-letter {
-        text-transform: capitalize;
-    }
+  &:first-letter {
+    text-transform: capitalize;
+  }
 
-    @media #{$tui-mobile} {
-        font: var(--tui-font-heading-6);
-    }
+  @media #{$tui-mobile} {
+    font: var(--tui-font-heading-6);
+  }
 
-    &:hover + .link {
-        opacity: 1;
-    }
+  &:hover + .link {
+    opacity: 1;
+  }
 }
 
 .link {
-    font: var(--tui-font-heading-6);
-    padding-right: 0.1rem;
+  font: var(--tui-font-heading-6);
+  padding-right: 0.1rem;
 
-    @media not #{$tui-mobile} {
-        font: var(--tui-font-heading-5);
-        margin-left: -1.6rem;
+  @media not #{$tui-mobile} {
+    font: var(--tui-font-heading-5);
+    margin-left: -1.6rem;
 
-        &:not(:hover):not(.link-active) {
-            opacity: 0;
-        }
+    &:not(:hover):not(.link-active) {
+      opacity: 0;
     }
+  }
 }

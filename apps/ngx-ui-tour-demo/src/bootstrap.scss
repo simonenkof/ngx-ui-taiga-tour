@@ -14,15 +14,17 @@
 @import 'bootstrap/scss/utilities/api';
 @import 'bootstrap/scss/helpers';
 
-ngb-popover-window, popover-container {
-    color: var(--#{$prefix}body-color);
-    -webkit-text-size-adjust: 100%;
-    -webkit-tap-highlight-color: rgba($black, 0);
+ngb-popover-window,
+popover-container {
+  color: var(--#{$prefix}body-color);
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba($black, 0);
 
-    @import 'bootstrap/scss/reboot';
-    @import 'bootstrap/scss/type';
+  @import 'bootstrap/scss/reboot';
+  @import 'bootstrap/scss/type';
 }
 
-.popover, .popover-arrow {
-    position: absolute;
+.popover,
+.popover-arrow {
+  position: absolute;
 }

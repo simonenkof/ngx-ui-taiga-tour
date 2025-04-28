@@ -1,7 +1,4 @@
-import {ListComponent} from './list.component';
-import {ListItemComponent} from './list-item/list-item.component';
+import { ListComponent } from './list.component';
+import { ListItemComponent } from './list-item/list-item.component';
 
-export const LIST_COMPONENTS = [
-    ListComponent,
-    ListItemComponent
-];
+export const LIST_COMPONENTS = [ListComponent, ListItemComponent];

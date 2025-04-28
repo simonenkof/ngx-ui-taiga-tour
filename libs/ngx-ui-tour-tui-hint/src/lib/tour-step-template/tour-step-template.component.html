@@ -1,17 +1,9 @@
 <ng-template #tuiDropdownTemplate>
-    <ng-container
-        *ngTemplateOutlet="
-            stepTemplate || stepTemplateContent || defaultTemplate;
-            context: { step: step }
-        "
-    ></ng-container>
+  <ng-container
+    *ngTemplateOutlet="stepTemplate || stepTemplateContent || defaultTemplate; context: { step: step }"
+  ></ng-container>
 </ng-template>
 
-<ng-template
-    #defaultTemplate
-    let-step="step"
->
-    <tour-hint-default-step-template
-        [step]="step"
-    />
+<ng-template #defaultTemplate let-step="step">
+  <tour-hint-default-step-template [step]="step" />
 </ng-template>

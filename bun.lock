@@ -1,5 +1,5 @@
 {
-  "lockfileVersion": 0,
+  "lockfileVersion": 1,
   "workspaces": {
     "": {
       "dependencies": {
@@ -27,6 +27,7 @@
         "bootstrap": "^5.3.3",
         "ngx-bootstrap": "^19.0.1",
         "ngx-highlightjs": "^10.0.0",
+        "prettier": "^3.5.3",
         "primeicons": "^7.0.0",
         "primeng": "^19.0.2",
         "rxjs": "^7.8.1",
@@ -67,7 +68,7 @@
       "name": "ngx-ui-tour-console",
       "version": "14.0.0",
       "dependencies": {
-        "ngx-ui-tour-core": "libs/ngx-ui-tour-core",
+        "ngx-ui-tour-core": "14.0.0",
         "tslib": "^2.0.0",
       },
       "peerDependencies": {
@@ -88,92 +89,11 @@
         "rxjs": "^7.4.0",
       },
     },
-    "libs/ngx-ui-tour-ionic": {
-      "name": "ngx-ui-tour-ionic",
-      "version": "6.0.0",
-      "dependencies": {
-        "ngx-ui-tour-core": "libs/ngx-ui-tour-core",
-        "tslib": "^2.3.0",
-      },
-      "peerDependencies": {
-        "@angular/common": "^19.0.0",
-        "@angular/core": "^19.0.0",
-        "@ionic/angular": "^8.2.6",
-      },
-    },
-    "libs/ngx-ui-tour-md-menu": {
-      "name": "ngx-ui-tour-md-menu",
-      "version": "14.0.0",
-      "dependencies": {
-        "ngx-ui-tour-core": "libs/ngx-ui-tour-core",
-        "tslib": "^2.0.0",
-      },
-      "peerDependencies": {
-        "@angular/cdk": "^19.0.0",
-        "@angular/common": "^19.0.0",
-        "@angular/core": "^19.0.0",
-        "@angular/material": "^19.0.0",
-      },
-    },
-    "libs/ngx-ui-tour-ng-bootstrap": {
-      "name": "ngx-ui-tour-ng-bootstrap",
-      "version": "16.0.0",
-      "dependencies": {
-        "ngx-ui-tour-core": "libs/ngx-ui-tour-core",
-        "tslib": "^2.0.0",
-      },
-      "peerDependencies": {
-        "@angular/common": "^19.0.0",
-        "@angular/core": "^19.0.0",
-        "@ng-bootstrap/ng-bootstrap": "^18.0.0",
-      },
-    },
-    "libs/ngx-ui-tour-ngx-bootstrap": {
-      "name": "ngx-ui-tour-ngx-bootstrap",
-      "version": "14.0.0",
-      "dependencies": {
-        "ngx-ui-tour-core": "libs/ngx-ui-tour-core",
-        "tslib": "^2.0.0",
-      },
-      "peerDependencies": {
-        "@angular/common": "^19.0.0",
-        "@angular/core": "^19.0.0",
-        "ngx-bootstrap": "^19.0.0",
-      },
-    },
-    "libs/ngx-ui-tour-primeng": {
-      "name": "ngx-ui-tour-primeng",
-      "version": "1.0.0",
-      "dependencies": {
-        "ngx-ui-tour-core": "libs/ngx-ui-tour-core",
-        "tslib": "^2.3.0",
-      },
-      "peerDependencies": {
-        "@angular/common": "^19.0.0",
-        "@angular/core": "^19.0.0",
-        "primeicons": ">=7.0.0",
-        "primeng": "^19.0.0",
-      },
-    },
-    "libs/ngx-ui-tour-tui-dropdown": {
-      "name": "ngx-ui-tour-tui-dropdown",
-      "version": "8.0.0",
-      "dependencies": {
-        "ngx-ui-tour-core": "libs/ngx-ui-tour-core",
-        "tslib": "^2.3.0",
-      },
-      "peerDependencies": {
-        "@angular/common": "^19.0.0",
-        "@angular/core": "^19.0.0",
-        "@taiga-ui/core": "^4.0.0",
-        "@taiga-ui/icons": "^4.0.0",
-      },
-    },
     "libs/ngx-ui-tour-tui-hint": {
       "name": "ngx-ui-tour-tui-hint",
       "version": "8.0.0",
       "dependencies": {
-        "ngx-ui-tour-core": "libs/ngx-ui-tour-core",
+        "ngx-ui-tour-core": "14.0.0",
         "tslib": "^2.3.0",
       },
       "peerDependencies": {
@@ -2089,23 +2009,11 @@
 
     "ngx-highlightjs": ["ngx-highlightjs@10.0.0", "", { "dependencies": { "highlight.js": "^11.8.0", "tslib": "^2.0.0" }, "peerDependencies": { "@angular/common": ">=16.0.0", "@angular/core": ">=16.0.0", "rxjs": ">=7.0.0" } }, "sha512-F5VXB6vnpiTPMADUoCEkyc2wnqpKUNvfeAP4tO//NrwdQP2sQK6MfPg+jHL2adoJE5LIchsJlpq6C0r+KmlOSA=="],
 
-    "ngx-ui-tour-console": ["ngx-ui-tour-console@workspace:libs/ngx-ui-tour-console", { "dependencies": { "ngx-ui-tour-core": "libs/ngx-ui-tour-core", "tslib": "^2.0.0" }, "peerDependencies": { "@angular/common": "^19.0.0", "@angular/core": "^19.0.0" } }],
+    "ngx-ui-tour-console": ["ngx-ui-tour-console@workspace:libs/ngx-ui-tour-console"],
 
-    "ngx-ui-tour-core": ["ngx-ui-tour-core@workspace:libs/ngx-ui-tour-core", { "dependencies": { "tslib": "^2.0.0" }, "peerDependencies": { "@angular/common": "^19.0.0", "@angular/core": "^19.0.0", "@angular/router": "^19.0.0", "rxjs": "^7.4.0" } }],
+    "ngx-ui-tour-core": ["ngx-ui-tour-core@workspace:libs/ngx-ui-tour-core"],
 
-    "ngx-ui-tour-ionic": ["ngx-ui-tour-ionic@workspace:libs/ngx-ui-tour-ionic", { "dependencies": { "ngx-ui-tour-core": "libs/ngx-ui-tour-core", "tslib": "^2.3.0" }, "peerDependencies": { "@angular/common": "^19.0.0", "@angular/core": "^19.0.0", "@ionic/angular": "^8.2.6" } }],
-
-    "ngx-ui-tour-md-menu": ["ngx-ui-tour-md-menu@workspace:libs/ngx-ui-tour-md-menu", { "dependencies": { "ngx-ui-tour-core": "libs/ngx-ui-tour-core", "tslib": "^2.0.0" }, "peerDependencies": { "@angular/cdk": "^19.0.0", "@angular/common": "^19.0.0", "@angular/core": "^19.0.0", "@angular/material": "^19.0.0" } }],
-
-    "ngx-ui-tour-ng-bootstrap": ["ngx-ui-tour-ng-bootstrap@workspace:libs/ngx-ui-tour-ng-bootstrap", { "dependencies": { "ngx-ui-tour-core": "libs/ngx-ui-tour-core", "tslib": "^2.0.0" }, "peerDependencies": { "@angular/common": "^19.0.0", "@angular/core": "^19.0.0", "@ng-bootstrap/ng-bootstrap": "^18.0.0" } }],
-
-    "ngx-ui-tour-ngx-bootstrap": ["ngx-ui-tour-ngx-bootstrap@workspace:libs/ngx-ui-tour-ngx-bootstrap", { "dependencies": { "ngx-ui-tour-core": "libs/ngx-ui-tour-core", "tslib": "^2.0.0" }, "peerDependencies": { "@angular/common": "^19.0.0", "@angular/core": "^19.0.0", "ngx-bootstrap": "^19.0.0" } }],
-
-    "ngx-ui-tour-primeng": ["ngx-ui-tour-primeng@workspace:libs/ngx-ui-tour-primeng", { "dependencies": { "ngx-ui-tour-core": "libs/ngx-ui-tour-core", "tslib": "^2.3.0" }, "peerDependencies": { "@angular/common": "^19.0.0", "@angular/core": "^19.0.0", "primeicons": ">=7.0.0", "primeng": "^19.0.0" } }],
-
-    "ngx-ui-tour-tui-dropdown": ["ngx-ui-tour-tui-dropdown@workspace:libs/ngx-ui-tour-tui-dropdown", { "dependencies": { "ngx-ui-tour-core": "libs/ngx-ui-tour-core", "tslib": "^2.3.0" }, "peerDependencies": { "@angular/common": "^19.0.0", "@angular/core": "^19.0.0", "@taiga-ui/core": "^4.0.0", "@taiga-ui/icons": "^4.0.0" } }],
-
-    "ngx-ui-tour-tui-hint": ["ngx-ui-tour-tui-hint@workspace:libs/ngx-ui-tour-tui-hint", { "dependencies": { "ngx-ui-tour-core": "libs/ngx-ui-tour-core", "tslib": "^2.3.0" }, "peerDependencies": { "@angular/common": "^19.0.0", "@angular/core": "^19.0.0", "@taiga-ui/core": "^4.0.0", "@taiga-ui/icons": "^4.0.0" } }],
+    "ngx-ui-tour-tui-hint": ["ngx-ui-tour-tui-hint@workspace:libs/ngx-ui-tour-tui-hint"],
 
     "node-abort-controller": ["node-abort-controller@3.1.1", "", {}, "sha512-AGK2yQKIjRuqnc6VkX2Xj5d+QW8xZ87pa1UK6yA6ouUyuxfHuMP6umE5QK7UmTeOAymo+Zx1Fxiuw9rVx8taHQ=="],
 
@@ -2318,6 +2226,8 @@
     "postcss-value-parser": ["postcss-value-parser@4.2.0", "", {}, "sha512-1NNCs6uurfkVbeXG4S8JFT9t19m45ICnif8zWLd5oPSZ50QnwMfK+H3jv408d4jw/7Bttv5axS5IiHoLaVNHeQ=="],
 
     "prelude-ls": ["prelude-ls@1.2.1", "", {}, "sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g=="],
+
+    "prettier": ["prettier@3.5.3", "", { "bin": { "prettier": "bin/prettier.cjs" } }, "sha512-QQtaxnoDJeAkDvDKWCLiwIXkTgRhwYDEQCghU9Z6q03iyek/rxRh/2lC3HB7P8sWT2xC/y5JDctPLBIGzHKbhw=="],
 
     "pretty-format": ["pretty-format@29.7.0", "", { "dependencies": { "@jest/schemas": "^29.6.3", "ansi-styles": "^5.0.0", "react-is": "^18.0.0" } }, "sha512-Pdlw/oPxN+aXdmM9R00JVC9WVFoCLTKJvDVLgmJ+qAffBMxsV85l/Lu7sNx4zSzPyoL2euImuEwHhOXdEgNFZQ=="],
 

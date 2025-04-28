@@ -4,7 +4,7 @@
 
 Angular Material, Ionic, PrimeNG, Taiga UI, Ng Bootstrap and Ngx Bootstrap UIs are supported.
 
-`ngx-ui-tour` is a fork of __Isaac Mann's__ `ngx-tour`. The project had to be forked since the original is no longer 
+`ngx-ui-tour` is a fork of **Isaac Mann's** `ngx-tour`. The project had to be forked since the original is no longer
 maintained.
 
 ---
@@ -38,7 +38,7 @@ Demo and documentation can be found at [hakimio.github.io/ngx-ui-tour](https://h
 ### Material Design and Ngx Bootstrap tour UIs
 
 | Angular | RxJS | ngx-ui-tour |
-|---------|------|-------------|
+| ------- | ---- | ----------- |
 | 19      | 7    | 14          |
 | 18      | 7    | 13          |
 | 17      | 7    | 12          |
@@ -51,7 +51,7 @@ Demo and documentation can be found at [hakimio.github.io/ngx-ui-tour](https://h
 ### NG Bootstrap tour UI
 
 | Angular | RxJS | ngx-ui-tour |
-|---------|------|-------------|
+| ------- | ---- | ----------- |
 | 19      | 7    | 16          |
 | 18      | 7    | 15          |
 | 17      | 7    | 14          |
@@ -64,7 +64,7 @@ Demo and documentation can be found at [hakimio.github.io/ngx-ui-tour](https://h
 ### Ionic tour UI
 
 | Angular | RxJS | Ionic | ngx-ui-tour |
-|---------|------|-------|-------------|
+| ------- | ---- | ----- | ----------- |
 | 19      | 7    | 8     | 6           |
 | 18      | 7    | 8     | 5           |
 | 18      | 7    | 7, 8  | 4           |
@@ -75,13 +75,13 @@ Demo and documentation can be found at [hakimio.github.io/ngx-ui-tour](https://h
 ### PrimeNG tour UI
 
 | Angular | RxJS | PrimeNG | ngx-ui-tour |
-|---------|------|---------|-------------|
+| ------- | ---- | ------- | ----------- |
 | 19      | 7    | 19      | 1           |
 
 ### Taiga UI tour UI
 
 | Angular | RxJS | Taiga UI | ngx-ui-tour |
-|---------|------|----------|-------------|
+| ------- | ---- | -------- | ----------- |
 | 19      | 7    | 4        | 8           |
 | 18      | 7    | 3        | 7           |
 | 17      | 7    | 3        | 6           |

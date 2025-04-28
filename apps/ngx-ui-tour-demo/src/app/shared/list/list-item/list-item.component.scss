@@ -1,18 +1,18 @@
 :host {
-    display: block;
+  display: block;
 
-    &:not(:last-of-type) {
-        border-bottom: 1px solid var(--tui-background-neutral-1-hover);
-    }
-    font: var(--tui-font-text-s);
-    padding: 1rem 0;
-    word-wrap: break-word;
-    color: var(--tui-text-primary);
+  &:not(:last-of-type) {
+    border-bottom: 1px solid var(--tui-background-neutral-1-hover);
+  }
+  font: var(--tui-font-text-s);
+  padding: 1rem 0;
+  word-wrap: break-word;
+  color: var(--tui-text-primary);
 
-    .name {
-        font: var(--tui-font-text-m);
-        margin-bottom: .25rem;
-        font-family: monospace;
-        color: #8f75d1;
-    }
+  .name {
+    font: var(--tui-font-text-m);
+    margin-bottom: 0.25rem;
+    font-family: monospace;
+    color: #8f75d1;
+  }
 }

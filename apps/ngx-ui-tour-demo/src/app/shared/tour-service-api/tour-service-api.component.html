@@ -1,13 +1,8 @@
 <app-header id="tour-service">TourService</app-header>
-<p>
-    The <code>TourService</code> controls the tour. Some key functions include:
-</p>
+<p>The <code>TourService</code> controls the tour. Some key functions include:</p>
 
 <app-list>
-    @for (method of methods; track method.name) {
-        <app-list-item
-            [name]="method.name"
-            [description]="method.description"
-        ></app-list-item>
-    }
+  @for (method of methods; track method.name) {
+    <app-list-item [name]="method.name" [description]="method.description"></app-list-item>
+  }
 </app-list>

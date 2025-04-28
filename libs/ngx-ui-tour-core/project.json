@@ -46,15 +46,10 @@
     "lint": {
       "executor": "@nx/eslint:lint",
       "options": {
-        "lintFilePatterns": [
-          "libs/ngx-ui-tour-core/src/**/*.ts",
-          "libs/ngx-ui-tour-core/src/**/*.html"
-        ],
+        "lintFilePatterns": ["libs/ngx-ui-tour-core/src/**/*.ts", "libs/ngx-ui-tour-core/src/**/*.html"],
         "eslintConfig": "libs/ngx-ui-tour-core/eslint.config.cjs"
       },
-      "outputs": [
-        "{options.outputFile}"
-      ]
+      "outputs": ["{options.outputFile}"]
     },
     "publish": {
       "executor": "nx:run-commands",

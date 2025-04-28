@@ -1,39 +1,31 @@
 <app-header id="simple-project" tourAnchor="usage">Usage</app-header>
 
 <ol>
-    <li>Add <code>{{ tourStepTag }}</code> to your root app component
-    </li>
-    <li>
-        Define anchor points for the tour steps by adding the <code>tourAnchor</code> directive throughout your app.
-        <tui-notification
-            class="tui-space_top-3"
-            appearance="warning"
-            size="m"
-        >
-            You have to import <code>{{ moduleName }}</code> in all your modules and standalone components where you use
-            <code>tourAnchor</code> directive.
-        </tui-notification>
-        <tui-doc-code
-            [code]="anchorPoints"
-            filename="app.component.html"
-        ></tui-doc-code>
-    </li>
-    <li>
-        Define your tour steps using <code>tourService.initialize(steps)</code>
-        <tui-doc-code
-            filename="app.component.ts"
-            [code]="examples.tourServiceExample"
-        ></tui-doc-code>
-    </li>
-    <li>Start the tour with <code tourAnchor="tourService.start">tourService.start()</code>
-    </li>
-    <li>Check out the
-        <a
-            tuiLink
-            target="_blank"
-            href="https://stackblitz.com/edit/angular-wau2z8?file=src%2Fapp%2Fui-tour-demo.component.ts"
-        >
-            demo source code
-        </a> for an example.
-    </li>
+  <li>
+    Add <code>{{ tourStepTag }}</code> to your root app component
+  </li>
+  <li>
+    Define anchor points for the tour steps by adding the <code>tourAnchor</code> directive throughout your app.
+    <tui-notification class="tui-space_top-3" appearance="warning" size="m">
+      You have to import <code>{{ moduleName }}</code> in all your modules and standalone components where you use
+      <code>tourAnchor</code> directive.
+    </tui-notification>
+    <tui-doc-code [code]="anchorPoints" filename="app.component.html"></tui-doc-code>
+  </li>
+  <li>
+    Define your tour steps using <code>tourService.initialize(steps)</code>
+    <tui-doc-code filename="app.component.ts" [code]="examples.tourServiceExample"></tui-doc-code>
+  </li>
+  <li>Start the tour with <code tourAnchor="tourService.start">tourService.start()</code></li>
+  <li>
+    Check out the
+    <a
+      tuiLink
+      target="_blank"
+      href="https://stackblitz.com/edit/angular-wau2z8?file=src%2Fapp%2Fui-tour-demo.component.ts"
+    >
+      demo source code
+    </a>
+    for an example.
+  </li>
 </ol>

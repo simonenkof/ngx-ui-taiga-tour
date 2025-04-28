@@ -1,19 +1,16 @@
 <app-header tourAnchor="hotkeys" id="hotkeys">Hotkeys</app-header>
 <p>
-    Hotkeys are provided using Angular's <code>&#64;HostListener</code> decorator. Hotkeys are enabled when the tour
-    starts and disabled when the tour ends.
+  Hotkeys are provided using Angular's <code>&#64;HostListener</code> decorator. Hotkeys are enabled when the tour
+  starts and disabled when the tour ends.
 </p>
 
 <p>
-    You can disable hotkeys by calling <code>tourService.disableHotkeys()</code> or re-enable with
-    <code>tourService.enableHotkeys()</code>.
+  You can disable hotkeys by calling <code>tourService.disableHotkeys()</code> or re-enable with
+  <code>tourService.enableHotkeys()</code>.
 </p>
 
 <app-list>
-    @for (hotkey of hotkeys; track hotkey.key) {
-        <app-list-item
-            [name]="hotkey.key"
-            [description]="hotkey.action"
-        ></app-list-item>
-    }
+  @for (hotkey of hotkeys; track hotkey.key) {
+    <app-list-item [name]="hotkey.key" [description]="hotkey.action"></app-list-item>
+  }
 </app-list>
