@@ -13,9 +13,9 @@ maintained.
 
 ### Taiga UI tour UI
 
-| Angular | RxJS | Taiga UI | ngx-ui-tour |
-| ------- | ---- | -------- | ----------- |
-| 19      | 7    | 4        | 0.1.1       |
+| Angular | RxJS | Taiga UI | taiga-tour |
+| ------- | ---- | -------- | ---------- |
+| 19      | 7    | 4        | 1.0.0      |
 
 ## License
 
