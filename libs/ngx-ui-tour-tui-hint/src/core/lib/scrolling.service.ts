@@ -72,7 +72,7 @@ export class ScrollingService {
         with: () => of(undefined),
       }),
       debounceTime(50),
-      map(() => undefined),
+      map((): void => undefined),
     );
   }
 }

@@ -90,7 +90,7 @@ export class TourBackdropService {
       elementBoundingRect = rectangle ?? this.targetHtmlElement.getBoundingClientRect(),
       scrollContainerRect = scrollContainer.getBoundingClientRect(),
       visibleSection = OverflowUtils.getVisibleSection(elementBoundingRect, scrollContainerRect),
-      scrollHeight = docEl.scrollHeight > 0 ? docEl.scrollHeight + 10 : 0,
+      scrollHeight = docEl.scrollHeight,
       scrollWidth = docEl.scrollWidth,
       window = this.document.defaultView,
       scrollX = window.scrollX,

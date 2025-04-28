@@ -402,6 +402,7 @@ export class TourService<T extends IStepOption = IStepOption> {
   private goToStep(step: T): void {
     if (!step) {
       console.warn("Can't go to non-existent step");
+      this.end$.error("Can't go to non-existent step");
       this.end();
       return;
     }
@@ -448,6 +449,7 @@ export class TourService<T extends IStepOption = IStepOption> {
 
     if (!navigated) {
       console.warn('Navigation to route failed: ', step.route);
+      this.end$.error(`Navigation to route failed: ${step.route}`);
       this.end();
     } else {
       this.setCurrentStepAsync(step, step.delayAfterNavigation);
@@ -502,6 +504,7 @@ export class TourService<T extends IStepOption = IStepOption> {
       }
 
       console.warn(`Can't attach to unregistered anchor with id "${step.anchorId}"`);
+      this.end$.error(`Can't attach to unregistered anchor with id "${step.anchorId}"`);
       this.end();
       return;
     }
