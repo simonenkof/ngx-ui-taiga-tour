@@ -1,7 +1,7 @@
 {
   "name": "taiga-ui-tour",
-  "version": "1.0.0",
-  "description": "UI tour library for Angular 19 with Taiga UI",
+  "version": "1.0.1",
+  "description": "UI tour library for Angular 19 with TaigaUI",
   "keywords": [
     "angular",
     "taiga-ui",

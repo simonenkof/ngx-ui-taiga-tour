@@ -40,6 +40,7 @@ export interface IStepOption {
   route?: string | UrlSegment[];
   nextStep?: number | string;
   prevStep?: number | string;
+  disablePrevStep?: boolean;
   scrollSettings?: ScrollSettings;
   prevBtnTitle?: string;
   nextBtnTitle?: string;
@@ -86,6 +87,7 @@ const DEFAULT_STEP_OPTIONS: IStepOption = {
   prevBtnTitle: 'Prev',
   nextBtnTitle: 'Next',
   endBtnTitle: 'End',
+  disablePrevStep: false,
   enableBackdrop: false,
   isAsync: false,
   isOptional: false,
