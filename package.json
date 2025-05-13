@@ -1,6 +1,6 @@
 {
   "name": "taiga-ui-tour",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "Fork of ngx-ui-tour adapted for Taiga UI needs",
   "keywords": [],
   "author": "Fedor Simonenko <simonenko.f.a@gmail.com>",
