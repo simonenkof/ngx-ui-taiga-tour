@@ -1,5 +1,5 @@
 {
-  "name": "taiga-tour",
+  "name": "taiga-ui-tour",
   "version": "1.1.2",
   "description": "Fork of ngx-ui-tour adapted for Taiga UI needs",
   "keywords": [],
