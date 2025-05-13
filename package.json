@@ -1,12 +1,12 @@
 {
-  "name": "ngx-taiga-ui-tour",
+  "name": "taiga-tour",
   "version": "1.1.1",
   "description": "Fork of ngx-ui-tour adapted for Taiga UI needs",
   "keywords": [],
   "author": "Fedor Simonenko <simonenko.f.a@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/simonenkof/ngx-ui-tour"
+    "url": "https://github.com/simonenkof/taiga-tour"
   },
   "license": "MIT",
   "engines": {
@@ -19,7 +19,7 @@
     "lint": "nx run-many --target=lint",
     "prettier:fix": "prettier . -w",
     "release": "nx release",
-    "publish": "cd dist/ngx-ui-tour-tui-hint && npm publish && cd ../../",
+    "publish": "cd dist/taiga-tour && npm publish && cd ../../",
     "build": "nx run-many --target=build --projects=tag:libs"
   },
   "dependencies": {

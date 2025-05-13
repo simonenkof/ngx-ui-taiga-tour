@@ -1,30 +1,30 @@
 {
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "name": "ngx-taiga-tour",
+  "name": "taiga-tour",
   "projectType": "library",
   "tags": ["libs"],
-  "sourceRoot": "libs/ngx-ui-tour-tui-hint/src",
+  "sourceRoot": "libs/taiga-tour/src",
   "prefix": "lib",
   "targets": {
     "prebuild": {
       "executor": "@nx/angular:package",
-      "outputs": ["{workspaceRoot}/dist/ngx-ui-tour-tui-hint"],
+      "outputs": ["{workspaceRoot}/dist/taiga-tour"],
       "options": {
-        "project": "libs/ngx-ui-tour-tui-hint/ng-package.json"
+        "project": "libs/taiga-tour/ng-package.json"
       },
       "configurations": {
         "production": {
-          "tsConfig": "libs/ngx-ui-tour-tui-hint/tsconfig.lib.prod.json"
+          "tsConfig": "libs/taiga-tour/tsconfig.lib.prod.json"
         },
         "development": {
-          "tsConfig": "libs/ngx-ui-tour-tui-hint/tsconfig.lib.json"
+          "tsConfig": "libs/taiga-tour/tsconfig.lib.json"
         }
       },
       "defaultConfiguration": "production"
     },
     "build": {
       "executor": "nx:run-commands",
-      "outputs": ["{workspaceRoot}/dist/ngx-ui-tour-tui-hint"],
+      "outputs": ["{workspaceRoot}/dist/taiga-tour"],
       "options": {
         "parallel": false,
         "commands": ["nx prebuild {projectName}"]
@@ -33,8 +33,8 @@
     "lint": {
       "executor": "@nx/eslint:lint",
       "options": {
-        "lintFilePatterns": ["libs/ngx-ui-tour-tui-hint/src/**/*.ts", "libs/ngx-ui-tour-tui-hint/src/**/*.html"],
-        "eslintConfig": "libs/ngx-ui-tour-tui-hint/eslint.config.cjs"
+        "lintFilePatterns": ["libs/taiga-tour/src/**/*.ts", "libs/taiga-tour/src/**/*.html"],
+        "eslintConfig": "libs/taiga-tour/eslint.config.cjs"
       },
       "outputs": ["{options.outputFile}"]
     },

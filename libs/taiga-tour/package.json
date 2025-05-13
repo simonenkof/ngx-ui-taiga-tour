@@ -1,5 +1,5 @@
 {
-  "name": "taiga-ui-tour",
+  "name": "taiga-tour",
   "version": "1.1.1",
   "description": "UI tour library for Angular 19 with TaigaUI",
   "keywords": [
@@ -11,7 +11,7 @@
     "onboarding",
     "onboarding-tour"
   ],
-  "repository": "https://github.com/simonenkof/ngx-ui-tour.git",
+  "repository": "https://github.com/simonenkof/taiga-tour.git",
   "author": "Fedor Simonenko <simonenko.f.a@gmail.com>",
   "license": "MIT",
   "peerDependencies": {
